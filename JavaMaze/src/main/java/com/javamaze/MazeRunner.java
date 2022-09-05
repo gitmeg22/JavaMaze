@@ -1,4 +1,4 @@
-package com.practice;
+package com.javamaze;
 
 public class MazeRunner {
     public static void main(String[] args) {
