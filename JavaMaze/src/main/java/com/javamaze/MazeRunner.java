@@ -34,9 +34,29 @@ public class MazeRunner {
         // NEED TO LOOK AT Y FIRST... ROW OF 2D ARRAY
         // THEN X... COLUMN
         assert path.peek() != null;
-        maze[path.peek().y][path.peek().x] = 0;
+        int y = path.peek().y;
+        int x = path.peek().x;
 
+        // Mark path start as zero
+        maze[y][x] = 0;
 
+        // Check path going DOWN with ENHANCED SWITCH STATEMENT
+      /*  switch (maze[y + 1][x]) {
+            case 2 -> System.out.println("You WIN!");
+            case 1 -> System.out.println("keep going");
+            case 0 -> System.out.println("blocked");
+            default -> System.out.println("NOTHING FOUND");
+        }*/
+
+//        while (true) {
+            if (maze[y + 1][x] == 2) {
+                System.out.println("You WIN!");
+                return;
+            } else if (maze[y + 1][x] == 1) {
+                System.out.println("Moved down");
+                path.push(new Position(x, y + 1));
+            }
+//        }
 
 
     }
